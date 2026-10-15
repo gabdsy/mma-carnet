@@ -1,0 +1,14 @@
+# Dépendances et build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Secrets : ne jamais commiter
+.env
+.env.*
+!.env.example
+
+# Outils
+.vercel/
+*.log
+.DS_Store
