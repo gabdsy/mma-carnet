@@ -15,7 +15,7 @@ quand une décision change.
 
 - Vite + React + TypeScript (strict) — application monopage
 - Tailwind CSS, React Router
-- Supabase : Postgres, Auth (code à usage unique par e-mail), Row Level Security
+- Supabase : Postgres, Auth (e-mail + mot de passe, aucun e-mail envoyé), Row Level Security
 - vite-plugin-pwa (manifest + service worker)
 - Vercel (hébergement statique, déploiement à chaque push sur `main`)
 - Vitest pour la logique pure (dates, validation, parsing du contenu)
@@ -82,7 +82,8 @@ npm run import     # content/*.md -> Supabase (lessons, drills)
 - Seules les variables préfixées `VITE_` arrivent dans le navigateur :
   `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`. **La clé `service_role` ne porte jamais
   le préfixe `VITE_`** et n'est utilisée que par `scripts/import-content.ts`, en local.
-- Inscriptions publiques désactivées dans Supabase : les amis sont invités.
+- Inscriptions publiques et confirmation par e-mail désactivées dans Supabase : l'admin crée
+  les comptes à la main (Authentication → Users). Aucun envoi d'e-mail (pas de SMTP).
 
 ## Règles de travail
 

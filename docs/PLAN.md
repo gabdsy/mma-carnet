@@ -13,7 +13,7 @@
 | Bilan | les deux : 2 champs facultatifs après chaque séance + un bilan hebdomadaire |
 | Types de séance | mma / grappling / boxe / sparring / physique / autre |
 | Créneaux récurrents | fixes pour tous les types sauf physique et autre (saisis au fil de l'eau) |
-| Connexion | code à 6 chiffres par e-mail (pas de lien magique : sur iPhone il s'ouvre dans Safari, pas dans la PWA) ; inscriptions fermées, amis invités |
+| Connexion | e-mail + mot de passe, **aucun e-mail envoyé** (pas de SMTP personnalisé) ; inscriptions et confirmation par e-mail désactivées ; l'admin crée les comptes dans Authentication → Users |
 | Appareil cible | iPhone 13 mini (375 × 812 px, encoche → `viewport-fit=cover` + `safe-area-inset`) |
 | Leçon en anglais | traduite en français (demi-garde) |
 
@@ -240,7 +240,7 @@ Chaque étape = un commit qui marche, avec un test concret.
 | # | Tâche | Comment on vérifie |
 |---|---|---|
 | 0 | `git init`, projet Vite + TS + Tailwind, `.gitignore`, `.env.example`, déploiement Vercel | La page « Bonjour » s'ouvre sur ton téléphone via l'URL Vercel |
-| 1 | Projet Supabase, connexion par code reçu par e-mail, table `profiles` | Tu te connectes depuis le téléphone, tu te déconnectes |
+| 1 | Projet Supabase, connexion e-mail + mot de passe, table `profiles` | Tu te connectes depuis le téléphone, tu te déconnectes |
 | 2 | Manifest + icônes PWA | « Ajouter à l'écran d'accueil » fonctionne |
 | 3 | Tables `training_sessions` + RLS | Test SQL : le compte B ne voit pas les séances du compte A |
 | 4 | Formulaire de séance rapide | Saisie chronométrée < 30 s debout, téléphone à une main |
