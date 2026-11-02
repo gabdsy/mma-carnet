@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Fond plein : l'icône reste propre même quand iOS ou Android la découpent -->
+  <rect width="512" height="512" fill="#0a0a0a"/>
+  <!-- Octogone (la cage), dans la zone centrale sûre (80 %) -->
+  <polygon points="200,106 312,106 406,200 406,312 312,406 200,406 106,312 106,200"
+           fill="none" stroke="#dc2626" stroke-width="34" stroke-linejoin="round"/>
+  <polygon points="226,170 286,170 342,226 342,286 286,342 226,342 170,286 170,226"
+           fill="#fafafa"/>
+</svg>

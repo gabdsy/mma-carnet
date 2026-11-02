@@ -29,10 +29,9 @@ npm run dev        # serveur local
 npm run build      # build de production
 npm run test       # Vitest
 npm run lint       # ESLint + vérification TypeScript
-npm run import     # content/*.md -> Supabase (lessons, drills)
+npm run icons      # régénère les icônes PWA depuis public/logo.svg
+npm run import     # content/*.md -> Supabase (lessons, drills) — à venir
 ```
-
-(À compléter quand le projet est initialisé.)
 
 ## Arborescence
 
