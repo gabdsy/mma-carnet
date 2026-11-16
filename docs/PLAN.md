@@ -129,12 +129,12 @@ physique et autre n'en ont normalement pas)
 | date | date | aujourd'hui par défaut |
 | session_type | text check | mma / grappling / boxe / sparring / physique / autre |
 | duration_min | int | |
-| rpe | int check 1-10 | effort perçu |
+| rpe | int null check 1-10 | effort perçu (facultatif, pour garder la saisie rapide) |
 | focus | text | « focus de séance » |
 | notes | text | |
 | went_well | text null | bilan rapide « ce qui a marché » (facultatif, replié par défaut) |
 | to_adjust | text null | bilan rapide « à ajuster » (facultatif) |
-| recurring_session_id | uuid null | relie à la séance prévue → calendrier « prévu / fait » |
+| recurring_session_id | uuid null | relie à la séance prévue → calendrier « prévu / fait » (clé étrangère ajoutée avec `recurring_sessions`) |
 
 **session_drills** — drills faits pendant une séance
 `id, session_id, user_id, drill_id, stance_used (orthodoxe / southpaw / les-deux), rounds_done, duration_min, notes, position`
@@ -242,7 +242,7 @@ Chaque étape = un commit qui marche, avec un test concret.
 | 0 | `git init`, projet Vite + TS + Tailwind, `.gitignore`, `.env.example`, déploiement Vercel | La page « Bonjour » s'ouvre sur ton téléphone via l'URL Vercel |
 | 1 | Projet Supabase, connexion e-mail + mot de passe, table `profiles` | Tu te connectes depuis le téléphone, tu te déconnectes |
 | 2 | Manifest + icônes PWA | « Ajouter à l'écran d'accueil » fonctionne |
-| 3 | Tables `training_sessions` + RLS | Test SQL : le compte B ne voit pas les séances du compte A |
+| 3 | Table `training_sessions` + RLS | `supabase/tests/rls_training_sessions.sql` : B ne voit, ne modifie ni ne supprime les séances de A |
 | 4 | Formulaire de séance rapide | Saisie chronométrée < 30 s debout, téléphone à une main |
 | 5 | Liste du journal + modification / suppression | Les séances apparaissent, de la plus récente à la plus ancienne |
 | 6 | Tables `lessons`, `lesson_chapters` + RLS lecture seule | Requête OK connecté, refusée déconnecté |
